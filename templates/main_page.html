@@ -16,14 +16,19 @@
     </div>
     <div class="container">
       <form action="{{ url_for('process_inputs') }}" method="post">
-        <div class="form-group">
-            <button type="submit" class="btn btn-secondary">log in</button>
-            <button type="submit" class="btn btn-tertiary">Create an account</button>
-          <label for="reason_dropdown">Why are you on this site?</label>
+            <!--
+                see a blank page with a welcome header, and 2 buttons that say "sign in" and the other "create an account"
+                if you click sign in , it aks what kind of account you have
+                if you click officer, it asks what type of officer
+                then it asks for your login and pass
+            -->
+            <button type="submit" class="btn btn-primary">log in</button>                    <!--first thing you see-->
+            <a href="/create_account"type="submit" class="btn btn-secondary">Create an account</a>
+          <div class="form-group">
+              <label for="reason_dropdown">Are you a...</label>
           <select class="form-control" name="reason_dropdown" id="reason_dropdown">
-            <option>I am a member</option>
-            <option>I am just curious</option>
-            <option>I am an officer</option>
+            <option>Member</option>
+            <option>Officer</option>
           </select>
         </div>
         <div class="form-group">
@@ -34,18 +39,14 @@
             <option>I am the Secretary</option>
             <option>I am the Treasurer</option>
             <option>I am the LTG</option>
-            <option>I am the Teacher, Sponsor</option>
+            <option>I am the Teacher/Sponsor</option>
           </select>
         </div>
         <div class="form-group">
           <label for="user_name">User Name</label>
           <input type="text" class="form-control" name="user_name"  id="user_name" placeholder="Fred Flintstone">
         </div>
-        <div class="form-group">
-          <label for="account_dropdown">Do you have an existing account with us?</label>
-          <select class="form-control" name="account_dropdown" id="account_dropdown">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-tertiary">Submit</button>
       </form>
     </div>
     <div class="container">
